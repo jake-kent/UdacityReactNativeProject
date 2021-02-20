@@ -1,0 +1,96 @@
+{
+  "dependencies": {
+    "@expo/vector-icons": "^12.0.3",
+    "@react-native-async-storage/async-storage": "^1.13.4",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.11.7",
+    "@react-navigation/native": "^5.9.2",
+    "@react-navigation/stack": "^5.14.2",
+    "expo": "~40.0.0",
+    "expo-app-loading": "^1.0.1",
+    "expo-constants": "^10.0.1",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-gesture-handler": "^1.10.1",
+    "react-native-screens": "~2.15.2",
+    "react-native-web": "~0.13.12",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "~7.9.0",
+    "@babel/eslint-parser": "^7.12.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "6.2.2",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "3.5.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "1.15.3",
+    "pretty-quick": "1.9.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "rules": {
+      "newline-after-var": 0,
+      "react/jsx-space-before-closing": 0,
+      "react/require-optimization": 0,
+      "class-methods-use-this": 0,
+      "react/forbid-component-props": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "id-match": 0,
+      "func-style": [
+        1,
+        "declaration",
+        {
+          "allowArrowFunctions": true
+        }
+      ],
+      "react/jsx-max-props-per-line": [
+        1,
+        {
+          "maximum": 1,
+          "when": "multiline"
+        }
+      ]
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "settings": {
+      "react": {
+        "version": "999.999.999"
+      }
+    }
+  },
+  "prettier": {
+    "useTabs": true,
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo web",
+    "eject": "expo eject"
+  },
+  "private": true
+}
