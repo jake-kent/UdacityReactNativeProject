@@ -8,7 +8,8 @@ const styles = {
         paddingBottom: 6,
         paddingLeft: 12,
         paddingRight: 12,
-        backgroundColor: colors.mahogany
+        backgroundColor: colors.mahogany,
+        borderRadius: 6
     },
     text: {
         color: 'white',
@@ -21,6 +22,16 @@ styles.active = {
 styles.disabled = {
     ...styles.default,
     opacity: 0.4
+}
+styles.inverted = {
+    ...styles.default,
+    backgroundColor: 'transparent',
+    borderColor: colors.mahogany,
+    borderWidth: 1
+}
+styles.textInverted = {
+    ...styles.text,
+    color: colors.mahogany   
 }
 
 export default StyleSheet.create(styles)

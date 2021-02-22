@@ -13,6 +13,8 @@ import AppStatusBar from './StatusBar'
 import HomeView from './HomeView'
 import AddDeckView from './AddDeckView'
 import DeckDetail from './DeckDetail'
+import AddCard from './AddCard'
+import QuizView from './Quiz/QuizView'
 
 import colors from '../styles/colors'
 
@@ -82,6 +84,32 @@ const NavStack = () => (
         const title = Platform.OS === 'ios' || Platform.OS === 'android'
           ? route.params.deckTitle
           : `Deck | ${route.params.deckTitle}`
+        return {
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: colors.mahogany
+        },
+        title
+      }}}
+    />
+    <Stack.Screen
+      name='AddCard'
+      component={AddCard}
+      options={({route}) => {
+        const title = `Add Card to ${route.params.deckTitle}`
+        return {
+        headerTintColor: 'white',
+        headerStyle: {
+          backgroundColor: colors.mahogany
+        },
+        title
+      }}}
+    />
+    <Stack.Screen
+      name='Quiz'
+      component={QuizView}
+      options={({route}) => {
+        const title = `Quiz for ${route.params.deckTitle}`
         return {
         headerTintColor: 'white',
         headerStyle: {

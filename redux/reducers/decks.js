@@ -1,4 +1,4 @@
-import { ADD_DECK, LOAD_DECKS } from '../actions/decks'
+import { ADD_DECK, LOAD_DECKS, ADD_CARD } from '../actions/decks'
 
 import { updateStorage } from '../../utils/AsyncStorage'
 
@@ -12,6 +12,19 @@ function decks (state = {}, action) {
             [action.title]: {
                 title: action.title,
                 questions: []
+            }
+        }
+        updateStorage(newState)
+        return newState
+    }
+    if (action.type === ADD_CARD) {
+        const newState = {
+            ...state,
+            [action.deckTitle]: {
+                ...state[action.deckTitle],
+                questions: state[action.deckTitle].questions.concat([
+                    {questionText: action.questionText, answerText: action.answerText}
+                ])
             }
         }
         updateStorage(newState)

@@ -30,8 +30,8 @@ const HomeView = ({decks, navigation}) => {
 }
 
 HomeView.propTypes = {
-    decks: PropTypes.object.isRequired,
-    navigation: PropTypes.object.isRequired
+  decks: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (decks) => ({decks: typeof decks !== 'undefined' ? decks : {}})

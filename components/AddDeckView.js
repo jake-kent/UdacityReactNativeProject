@@ -32,11 +32,24 @@ const AddDeckView = ({decks, dispatch, navigation}) => {
       <Text style={AddDeckStyles.header}>Add Deck</Text>
       <View style={AddDeckStyles.contentWrapper}>
         <Text style={AddDeckStyles.inputLabel}>What is the title of your new deck?</Text>
-        <TextInput style={[AddDeckStyles.input, InputStyles.default, error !== '' ? InputStyles.error : {}]} onChangeText={handleChange} value={title} />
+        <TextInput
+          style={[AddDeckStyles.input, InputStyles.default, error !== '' ? InputStyles.error : {}]}
+          onChangeText={handleChange}
+          value={title}
+        />
         {error !== '' && (
           <Text style={AddDeckStyles.error}>{error}</Text>
         )}
-        <Pressable onPress={handleSubmit} disabled={title === '' || error !== ''} style={[title === '' || error !== '' ? ButtonStyles.disabled : ButtonStyles.active, AddDeckStyles.submitButton]}>
+        <Pressable
+          onPress={handleSubmit}
+          disabled={title === '' || error !== ''}
+          style={[
+            title === '' || error !== ''
+              ? ButtonStyles.disabled
+              : ButtonStyles.active,
+            AddDeckStyles.submitButton
+          ]}
+        >
           <Text style={ButtonStyles.text}>Create Deck</Text>
         </Pressable>
       </View>
