@@ -1,44 +1,27 @@
-# My Universal React Project
+# React Native Mobile Flashcards
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.io/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+## Description
+This app allows users to create decks of flashcards to quiz themselves against
+- Users can create decks
+- Users can select from a list of decks on the home view to view details about the decks
+- Users can add cards to each of their decks
+- Users can quiz themselves against any of their decks
+- Within quizes users can:
+  - Submit correct/incorrect for each card in the quiz
+  - See results of their quiz after completion
+  - Reset to the start of the quiz
+  - Return to the deck view
+- Users receive a notification at 8pm every day if they haven't completed at least one quiz that day
 
-## 🚀 How to use
+## 🚀 How to run
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
+- Ensure that expo and iOS and Android simulators have been installed and configured
+- Install packages with `yarn install`
 - Run `yarn start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+- To run on specific devices:
+  - iOS: Ensure the iOS simulator is running and type `i` from within the running yarn start
+  - Android: Ensure the Android simulator is running and type `a` from within the running yarn start
+  - Web: type 'w' and a new tab will open in your browser
 
-## Adding Native Code
-
-This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
-
-- Run `yarn eject` to create the native projects.
-- You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
-
-## Publishing
-
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.io/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.io/distribution/publishing-websites/).
-
-## 📝 Notes
-
-- Learn more about [Universal React](https://docs.expo.io/).
-- See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
+## n.b.
+Working code for notifications has been copied from the course lessons/project. However, there is no way to test the notifications witin the simulators/web browser

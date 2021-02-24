@@ -26,6 +26,7 @@ const QuizCard = ({question}) => {
     <Animated.View style={[QuizCardStyles.view, {opacity}]}>
       <Pressable onPress={handleFlip} style={QuizCardStyles.innerView}>
         <Text style={QuizCardStyles.text}>{isAnswerSide ? question.answerText : question.questionText}</Text>
+        <Text style={QuizCardStyles.tapText}>{isAnswerSide ? "tap for question" : "tap for answer"}</Text>
       </Pressable>
     </Animated.View>
   )

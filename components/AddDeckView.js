@@ -26,6 +26,7 @@ const AddDeckView = ({decks, dispatch, navigation}) => {
     dispatch(addDeck(title))
     setTitle('')
     navigation.goBack()
+    navigation.push('DeckDetail', {deckTitle: title})
   }
   return (
     <View style={AddDeckStyles.view}>
@@ -61,7 +62,8 @@ AddDeckView.propTypes = {
     decks: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
     navigation: PropTypes.shape({
-      goBack: PropTypes.func.isRequired
+      goBack: PropTypes.func.isRequired,
+      push: PropTypes.func.isRequired
     }).isRequired
 }
 

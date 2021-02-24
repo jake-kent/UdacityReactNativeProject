@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 
 import QuizCard from './QuizCard'
+import QuizResultsView from './QuizResultsView'
 
 import QuizViewStyles from '../../styles/QuizView'
+import ButtonStyles from '../../styles/ButtonStyles'
 
-const QuizView = ({deck}) => {
+const QuizView = ({deck, navigation}) => {
   const [answers, setAnswers] = useState([])
   const [currentCard, setCurrentCard] = useState(0)
   const [isComplete, setIsComplete] = useState(false)
@@ -23,12 +25,21 @@ const QuizView = ({deck}) => {
     }
   }
 
+  const handleReset = (e) => {
+    e.preventDefault()
+    setIsComplete(false)
+    setCurrentCard(0)
+    setAnswers([])
+  }
+
+  const handleGoBack = (e) => {
+    e.preventDefault()
+    navigation.goBack()
+  }
+
   if (isComplete === true) {
     return (
-      <View>
-        <Text>Score:</Text>
-        <Text>80%</Text>
-      </View>
+      <QuizResultsView answers={answers} reset={handleReset} goBack={handleGoBack} />
     )
   }
 
@@ -44,11 +55,23 @@ const QuizView = ({deck}) => {
         {deck.questions.length}
       </Text>
       <View style={QuizViewStyles.cardWrapper}>
-        <QuizCard question={deck.questions[currentCard]} onAnswer={handleAnswer} />
+        <QuizCard question={deck.questions[currentCard]} />
       </View>
-      <View>
-        <Text>Correct</Text>
-        <Text>Incorrect</Text>
+      <View style={QuizViewStyles.answerWrapper}>
+        <Pressable
+          disabled={deck.questions.length === 0}
+          onPress={(e) => handleAnswer(e, true)}
+          style={[ButtonStyles.active, QuizViewStyles.answerButton, QuizViewStyles.answerCorrect]}
+        >
+          <Text style={ButtonStyles.text}>Correct</Text>
+        </Pressable>
+        <Pressable
+          disabled={deck.questions.length === 0}
+          onPress={(e) => handleAnswer(e, false)}
+          style={[ButtonStyles.active, QuizViewStyles.answerButton, QuizViewStyles.answerIncorrect]}
+        >
+          <Text style={ButtonStyles.text}>Incorrect</Text>
+        </Pressable>
       </View>
     </View>
   )
@@ -57,7 +80,8 @@ const QuizView = ({deck}) => {
 QuizView.propTypes = {
   deck: PropTypes.shape({
     questions: PropTypes.array.isRequired
-  }).isRequired
+  }).isRequired,
+  navigation: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (decks, {route}) => {

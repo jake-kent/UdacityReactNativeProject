@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import colors from './colors'
+
 export default StyleSheet.create({
     view: {
         flex: 1
@@ -15,5 +17,9 @@ export default StyleSheet.create({
     text: {
         fontSize: 40,
         textAlign: 'center'
+    },
+    tapText: {
+        marginTop: 20,
+        color: colors.mahogany
     }
 })

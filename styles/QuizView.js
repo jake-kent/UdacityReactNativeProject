@@ -16,5 +16,23 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: colors.backgroundMahogany,
         padding: 30
+    },
+    answerWrapper: {
+        alignItems: 'center',
+        paddingTop: 20,
+        paddingBottom: 20,
+    },
+    answerButton: {
+        marginBottom: 10,
+        width: '75%',
+        alignItems: 'center',
+        paddingTop: 10,
+        paddingBottom: 10
+    },
+    answerCorrect: { 
+        backgroundColor: 'green'
+    },
+    answerIncorrect: { 
+        backgroundColor: 'red'
     }
 })
