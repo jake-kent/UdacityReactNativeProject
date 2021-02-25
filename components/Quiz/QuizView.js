@@ -9,6 +9,7 @@ import QuizResultsView from './QuizResultsView'
 
 import QuizViewStyles from '../../styles/QuizView'
 import ButtonStyles from '../../styles/ButtonStyles'
+import { setLocalNotification, clearLocalNotifications } from '../../utils/Notifications'
 
 const QuizView = ({deck, navigation}) => {
   const [answers, setAnswers] = useState([])
@@ -22,6 +23,8 @@ const QuizView = ({deck, navigation}) => {
       setCurrentCard(currentCard + 1)
     } else {
       setIsComplete(true)
+      clearLocalNotifications()
+        .then(setLocalNotification)
     }
   }
 

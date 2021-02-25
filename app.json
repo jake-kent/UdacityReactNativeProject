@@ -1,0 +1,20 @@
+{
+    "expo": {
+        "sdkVersion": "40.0.0",
+        "orientation": "portrait",
+        "name": "Jake's React Native Mobile Flashcards App",
+        "description": "Flashcard studying app",
+        "slug": "jakesrnflashcardapp",
+        "version": "1.0",
+        "icon": "https://static.thenounproject.com/png/4767-200.png",
+        "notification": {
+            "icon": "https://static.thenounproject.com/png/4767-200.png"
+        },
+        "ios": {
+            "bundleIdentifier": "org.jake.rnflashcards"
+        },
+        "android": {
+            "package": "org.jake.rnflashcards"
+        }
+    }
+}
